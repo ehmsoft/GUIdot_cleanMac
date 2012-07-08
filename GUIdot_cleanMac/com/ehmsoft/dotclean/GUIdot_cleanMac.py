@@ -10,10 +10,9 @@ __version__ = '0.1'
 
 import os
 import sys
-import shutil
 import copy
-from PySide.QtCore import *
-from PySide.QtGui import *
+from PySide.QtCore import SIGNAL
+from PySide.QtGui import QVBoxLayout, QPushButton, QMessageBox, QDialog, QListWidget, QHBoxLayout, QVBoxLayout, QLabel, QIcon, QApplication
 import resources
 
 class GUIdot_cleanMac(QDialog):
@@ -52,14 +51,18 @@ class GUIdot_cleanMac(QDialog):
         return os.system('dot_clean %s' % path)
     
     def siguienteClicked(self):
-        selected = self.lista.currentItem().text()
-        path = os.path.join('/Volumes', selected)
-        if self.dot_clean(path) == 0:
-            title = 'Proceso exitoso'
-            msg = u'Se limpió la memoria con éxito'
+        if self.lista.currentItem():
+            selected = self.lista.currentItem().text()
+            path = os.path.join('/Volumes', selected)
+            if self.dot_clean(path) == 0:
+                title = 'Proceso exitoso'
+                msg = u'Se limpió la memoria con éxito'
+            else:
+                title = 'Proceso fallido'
+                msg = u'Ocurrió un error inesperado. Verifique que la memoria esté montada.'
         else:
             title = 'Proceso fallido'
-            msg = u'Ocurrió un error inesperado. Verifique que la memoria esté montada.'
+            msg = u'No se encuentra ninguna memoria, por favor introduzca una y vuelva a iniciar la apliación'
         QMessageBox.information(self, title, msg)
         self.close()
 
