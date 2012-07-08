@@ -46,13 +46,16 @@ class GUIdot_cleanMac(QDialog):
         hlayout.addStretch()
         hlayout.addWidget(siguiente_btn)
         self.lista = QListWidget()
-        self.lista.addItems(self.getNodos())
+        nodos = self.getNodos()
+        self.lista.addItems(nodos)
         layout.addWidget(self.lista)
         layout.addLayout(hlayout)
         layout.addWidget(QLabel('Hecho por: www.ehmsoft.com'))
         self.setLayout(layout)
         self.connect(siguiente_btn, SIGNAL('clicked()'), self.siguienteClicked)
         self.setWindowTitle('Dot Clean')
+        if len(nodos) > 0:
+            self.lista.setCurrentRow(0)
 
     def getNodos(self): #Lista todos los volumenes y quita el Disco Duro del sistema
         path = '/Volumes'
