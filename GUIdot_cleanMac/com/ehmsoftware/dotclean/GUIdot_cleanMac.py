@@ -6,6 +6,27 @@ Created on 08/07/2012
 '''
 #GUIdot_cleanMac.py
 #Aplicacion para solucionar el problema de los archivos ._ en Mac
+
+#
+#
+#GUI_dot_cleanMac es software libre, usted puede redistribuir y/o modificarlo
+#bajo los términos de la licencia GNU GPL V3, publicada por la FSF.
+#
+#GUI_dot_cleanMac se distribuye "como tal" sin ningún tipo de garantía, para
+#más detalles diríajse a la GNU General Public License
+#
+# GUI_dot_cleanMac is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# any later version.
+#
+# GUI_dot_cleanMac is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with GUIdot_cleanMac; If not, see <http://www.gnu.org/licenses/>.
 __version__ = '0.1'
 
 import os
